@@ -2,10 +2,19 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState();
+  const [todos, setTodos] = useState([]);
 
   function handleButtonClick() {
-    setTodos("Miau");
+    const newTodo = "Miau";
+    const newTodos = [...todos, newTodo];
+    setTodos(newTodos);
+  }
+
+  function addTodo() {
+    const newTodoList = todos.map((todo) => {
+      return <Todo todoText={todo} />;
+    });
+    return newTodoList;
   }
 
   return (
@@ -13,9 +22,13 @@ function App() {
       <h1>Todo</h1>
       <input type="text"></input>
       <button onClick={handleButtonClick}>Add</button>
-      <p>{todos}</p>
+      <ul>{addTodo()}</ul>
     </div>
   );
 }
 
 export default App;
+
+function Todo() {
+  return <li>Hello</li>;
+}
