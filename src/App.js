@@ -2,10 +2,11 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(["FirstTodo"]);
 
-  function handleButtonClick() {
-    const newTodo = "Miau";
+  function handleAddButtonClick(event) {
+    event.preventDefault();
+    const newTodo = event.target.todoInput.value;
     const newTodos = [...todos, newTodo];
     setTodos(newTodos);
   }
@@ -20,8 +21,10 @@ function App() {
   return (
     <div className="App">
       <h1>Todo</h1>
-      <input type="text"></input>
-      <button onClick={handleButtonClick}>Add</button>
+      <form onSubmit={handleAddButtonClick}>
+        <input type="text" name="todoInput" id="todoInput"></input>
+        <button>Add</button>
+      </form>
       <ul>{addTodo()}</ul>
     </div>
   );
@@ -29,11 +32,13 @@ function App() {
 
 export default App;
 
-function Todo() {
+function Todo({ todoText }) {
+  function handleDeleteClick() {}
+
   return (
     <li>
-      <button>X</button>
-      <p>Hello</p>
+      <button onClick={handleDeleteClick}>X</button>
+      <p>{todoText}</p>
       <button>DONE</button>
     </li>
   );
