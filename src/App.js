@@ -16,7 +16,7 @@ function App() {
   }
 
   function handleDeleteTodo(todoName) {
-    const newTodos = todos.filter((todo) => todo.name !== todoName);
+    const newTodos = todos.filter((todo) => todo.id !== todoName);
     setTodos(newTodos);
   }
 
@@ -56,11 +56,11 @@ export default App;
 
 function Todo({ todoObject, onDeleteClick, onDoneClick }) {
   function handleDeleteClick() {
-    onDeleteClick(todoObject.name);
+    onDeleteClick(todoObject.id);
   }
 
   function handleDoneClick() {
-    onDoneClick(todoObject.isDone);
+    onDoneClick(todoObject.isDone, todoObject.name);
   }
 
   let todoClassToggle;
