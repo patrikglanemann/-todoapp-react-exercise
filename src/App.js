@@ -30,5 +30,11 @@ function App() {
 export default App;
 
 function Todo() {
-  return <li>Hello</li>;
+  return (
+    <li>
+      <button>X</button>
+      <p>Hello</p>
+      <button>DONE</button>
+    </li>
+  );
 }
