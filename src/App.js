@@ -15,17 +15,15 @@ function App() {
     setTodos(newTodos);
   }
 
-  function handleDeleteTodo(todoText) {
-    const newTodos = todos.filter((todo) => todo.name !== todoText);
+  function handleDeleteTodo(todoName) {
+    const newTodos = todos.filter((todo) => todo.name !== todoName);
     setTodos(newTodos);
   }
 
-  function handleDoneTode(){
-if(!todo.isDone)
-{
-  todoClass="Todo--done"
-} 
-
+  function handleDoneTode(todoIsDone) {
+    if (!todoIsDone) {
+      let todoClass = "Todo--done";
+    }
   }
 
   function addTodo() {
@@ -33,7 +31,6 @@ if(!todo.isDone)
       return (
         <Todo
           key={todo.id}
-          todoText={todo.name}
           todoObject={todo}
           onDeleteClick={handleDeleteTodo}
           onDoneClick={handleDoneTode}
@@ -57,22 +54,21 @@ if(!todo.isDone)
 
 export default App;
 
-function Todo({ todoText, onDeleteClick, onDoneClick }) {
+function Todo({ todoObject, onDeleteClick, onDoneClick }) {
   function handleDeleteClick() {
-    onDeleteClick(todoText);
+    onDeleteClick(todoObject.name);
   }
 
-  function handleDoneClick(){
-    onDoneClick();
+  function handleDoneClick() {
+    onDoneClick(todoObject.isDone);
   }
 
   let todoClassToggle;
-  if()
 
   return (
     <li className={`Todo ${todoClassToggle}`}>
       <button onClick={handleDeleteClick}>X</button>
-      <p>{todoText}</p>
+      <p>{todoObject.name}</p>
       <button onClick={handleDoneClick}>DONE</button>
     </li>
   );
