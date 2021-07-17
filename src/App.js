@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 import TodoList from "./TodoList.js";
+import Header from "./Header.js";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -37,10 +38,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo</h1>
-      <form onSubmit={handleAddButtonClick}>
-        <input type="text" name="todoInput" id="todoInput"></input>
-        <button>Add</button>
-      </form>
+      <Header onAddButtonClick={handleAddButtonClick} />
       <TodoList
         todos={todos}
         onTodoDoneClick={handleDoneTode}
