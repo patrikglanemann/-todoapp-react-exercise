@@ -9,3 +9,8 @@
 .App {
   text-align: center;
 }
+
+.Todo--done {
+  background-color: aliceblue;
+  color: salmon;
+}
