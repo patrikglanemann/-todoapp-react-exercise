@@ -1,6 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 
+import TodoList from "./TodoList.js";
+import Header from "./Header.js";
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -32,53 +35,17 @@ function App() {
     setTodos(doneTodos);
   }
 
-  function addTodo() {
-    const newTodoList = todos.map((todo) => {
-      return (
-        <Todo
-          key={todo.id}
-          todoObject={todo}
-          onDeleteClick={handleDeleteTodo}
-          onDoneClick={handleDoneTode}
-        />
-      );
-    });
-    return newTodoList;
-  }
-
   return (
     <div className="App">
       <h1>Todo</h1>
-      <form onSubmit={handleAddButtonClick}>
-        <input type="text" name="todoInput" id="todoInput"></input>
-        <button>Add</button>
-      </form>
-      <ul>{addTodo()}</ul>
+      <Header onAddButtonClick={handleAddButtonClick} />
+      <TodoList
+        todos={todos}
+        onTodoDoneClick={handleDoneTode}
+        onTodoDeleteClick={handleDeleteTodo}
+      />
     </div>
   );
 }
 
 export default App;
-
-function Todo({ todoObject, onDeleteClick, onDoneClick }) {
-  function handleDeleteClick() {
-    onDeleteClick(todoObject.id);
-  }
-
-  function handleDoneClick() {
-    onDoneClick(todoObject);
-  }
-
-  let todoClassToggle;
-  if (todoObject.isDone) {
-    todoClassToggle = "Todo--done";
-  }
-
-  return (
-    <li className={`Todo ${todoClassToggle}`}>
-      <button onClick={handleDeleteClick}>X</button>
-      <p>{todoObject.name}</p>
-      <button onClick={handleDoneClick}>DONE</button>
-    </li>
-  );
-}
