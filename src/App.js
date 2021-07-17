@@ -1,6 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 
+import Todo from "./TodoItem.";
+import TodoList from "./TodoList";
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -32,20 +35,6 @@ function App() {
     setTodos(doneTodos);
   }
 
-  function addTodo() {
-    const newTodoList = todos.map((todo) => {
-      return (
-        <Todo
-          key={todo.id}
-          todoObject={todo}
-          onDeleteClick={handleDeleteTodo}
-          onDoneClick={handleDoneTode}
-        />
-      );
-    });
-    return newTodoList;
-  }
-
   return (
     <div className="App">
       <h1>Todo</h1>
@@ -59,26 +48,3 @@ function App() {
 }
 
 export default App;
-
-function Todo({ todoObject, onDeleteClick, onDoneClick }) {
-  function handleDeleteClick() {
-    onDeleteClick(todoObject.id);
-  }
-
-  function handleDoneClick() {
-    onDoneClick(todoObject);
-  }
-
-  let todoClassToggle;
-  if (todoObject.isDone) {
-    todoClassToggle = "Todo--done";
-  }
-
-  return (
-    <li className={`Todo ${todoClassToggle}`}>
-      <button onClick={handleDeleteClick}>X</button>
-      <p>{todoObject.name}</p>
-      <button onClick={handleDoneClick}>DONE</button>
-    </li>
-  );
-}
