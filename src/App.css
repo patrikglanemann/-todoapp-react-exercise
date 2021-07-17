@@ -9,7 +9,6 @@
 .App {
   height: 100vh;
   display: grid;
-  grid-template-rows: 80px auto 80px;
+  grid-template-rows: 80px auto;
   text-align: center;
-  background-color: #b7b8b6;
 }

@@ -1,0 +1,5 @@
+.Content {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: #b7b8b6;
+}
