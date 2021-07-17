@@ -13,17 +13,23 @@ function App() {
       { id: Date.now(), name: newTodo, isDone: false },
     ];
     setTodos(newTodos);
+    event.target.reset();
   }
 
-  function handleDeleteTodo(todoName) {
-    const newTodos = todos.filter((todo) => todo.id !== todoName);
+  function handleDeleteTodo(todoId) {
+    const newTodos = todos.filter((todo) => todo.id !== todoId);
     setTodos(newTodos);
   }
 
-  function handleDoneTode(todoIsDone) {
-    if (!todoIsDone) {
-      let todoClass = "Todo--done";
-    }
+  function handleDoneTode(todoObjectClicked) {
+    const doneTodos = todos.map((todo) => {
+      if (todo.id === todoObjectClicked.id) {
+        return { ...todo, isDone: !todo.isDone };
+      } else {
+        return todo;
+      }
+    });
+    setTodos(doneTodos);
   }
 
   function addTodo() {
@@ -60,10 +66,13 @@ function Todo({ todoObject, onDeleteClick, onDoneClick }) {
   }
 
   function handleDoneClick() {
-    onDoneClick(todoObject.isDone, todoObject.name);
+    onDoneClick(todoObject);
   }
 
   let todoClassToggle;
+  if (todoObject.isDone) {
+    todoClassToggle = "Todo--done";
+  }
 
   return (
     <li className={`Todo ${todoClassToggle}`}>
