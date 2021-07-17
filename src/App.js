@@ -1,8 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 
-import Todo from "./TodoItem.";
-import TodoList from "./TodoList";
+import TodoList from "./TodoList.js";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -42,7 +41,11 @@ function App() {
         <input type="text" name="todoInput" id="todoInput"></input>
         <button>Add</button>
       </form>
-      <ul>{addTodo()}</ul>
+      <TodoList
+        todos={todos}
+        onTodoDoneClick={handleDoneTode}
+        onTodoDeleteClick={handleDeleteTodo}
+      />
     </div>
   );
 }
