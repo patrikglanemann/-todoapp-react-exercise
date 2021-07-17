@@ -9,9 +9,10 @@ export default function Todo({ todoObject, onDeleteClick, onDoneClick }) {
     onDoneClick(todoObject);
   }
 
-  let todoClassToggle;
+  let todoClassToggle, todoBtnClassToggle;
   if (todoObject.isDone) {
     todoClassToggle = "Todo--done";
+    todoBtnClassToggle = "Todo_doneBtn--done";
   }
 
   return (
@@ -19,8 +20,11 @@ export default function Todo({ todoObject, onDeleteClick, onDoneClick }) {
       <button className="Todo__deleteBtn" onClick={handleDeleteClick}>
         X
       </button>
-      <p>{todoObject.name}</p>
-      <button className="Todo__doneBtn" onClick={handleDoneClick}>
+      <p className="Todo__text">{todoObject.name}</p>
+      <button
+        className={`Todo__doneBtn ${todoBtnClassToggle}`}
+        onClick={handleDoneClick}
+      >
         DONE
       </button>
     </li>

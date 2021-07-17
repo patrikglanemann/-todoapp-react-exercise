@@ -3,3 +3,8 @@
   scroll-behavior: smooth;
   background-color: #b7b8b6;
 }
+
+.TodoList {
+  display: flex;
+  flex-direction: column-reverse;
+}
