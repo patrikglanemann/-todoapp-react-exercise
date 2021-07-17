@@ -16,9 +16,13 @@ export default function Todo({ todoObject, onDeleteClick, onDoneClick }) {
 
   return (
     <li className={`Todo ${todoClassToggle}`}>
-      <button onClick={handleDeleteClick}>X</button>
+      <button className="Todo__deleteBtn" onClick={handleDeleteClick}>
+        X
+      </button>
       <p>{todoObject.name}</p>
-      <button onClick={handleDoneClick}>DONE</button>
+      <button className="Todo__doneBtn" onClick={handleDoneClick}>
+        DONE
+      </button>
     </li>
   );
 }

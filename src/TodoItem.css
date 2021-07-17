@@ -1,4 +1,22 @@
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 15px;
+  padding: 10px;
+  background-color: #4cb5f5;
+}
+
 .Todo--done {
   background-color: aliceblue;
   color: salmon;
+}
+
+.Todo__deleteBtn {
+  color: red;
+}
+
+.Todo__doneBtn {
+  color: #34675c;
+  font-weight: 800;
 }
