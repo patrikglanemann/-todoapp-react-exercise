@@ -37,7 +37,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo</h1>
       <Header onAddButtonClick={handleAddButtonClick} />
       <TodoList
         todos={todos}
@@ -49,3 +48,10 @@ function App() {
 }
 
 export default App;
+
+/*
+#4cb5f5 blue
+#b7b8b6 grey
+#34675C dark green
+#B3C100 green
+*/

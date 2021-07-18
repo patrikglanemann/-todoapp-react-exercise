@@ -1,4 +1,44 @@
-.Todo--done {
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 15px;
+  padding: 15px;
   background-color: aliceblue;
+  border-radius: 20px;
+  border: 3px solid #4cb5f5;
+}
+
+.Todo--done {
+  background-color: rgb(243, 255, 240);
   color: salmon;
+}
+
+.Todo__deleteBtn {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: indianred;
+  font-weight: 800;
+  padding: 5px 10px;
+}
+
+.Todo__doneBtn {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: lightsalmon;
+  font-weight: 800;
+  padding: 5px;
+}
+
+.Todo_doneBtn--done {
+  background-color: #b3c100;
+}
+
+.Todo__text {
+  max-width: 50vw;
+  overflow-x: scroll;
+  white-space: nowrap;
+  font-weight: 500;
 }

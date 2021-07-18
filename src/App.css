@@ -7,10 +7,8 @@
 }
 
 .App {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px auto;
   text-align: center;
-}
-
-.Todo--done {
-  background-color: aliceblue;
-  color: salmon;
 }

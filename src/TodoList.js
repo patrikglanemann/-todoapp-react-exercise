@@ -1,3 +1,4 @@
+import "./TodoList.css";
 import Todo from "./TodoItem.js";
 
 export default function TodoList({
@@ -18,5 +19,9 @@ export default function TodoList({
     });
     return newTodoList;
   }
-  return <ul>{addTodo()}</ul>;
+  return (
+    <main className="Content">
+      <ul className="TodoList">{addTodo()}</ul>
+    </main>
+  );
 }

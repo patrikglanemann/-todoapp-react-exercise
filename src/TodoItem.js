@@ -9,16 +9,24 @@ export default function Todo({ todoObject, onDeleteClick, onDoneClick }) {
     onDoneClick(todoObject);
   }
 
-  let todoClassToggle;
+  let todoClassToggle, todoBtnClassToggle;
   if (todoObject.isDone) {
     todoClassToggle = "Todo--done";
+    todoBtnClassToggle = "Todo_doneBtn--done";
   }
 
   return (
     <li className={`Todo ${todoClassToggle}`}>
-      <button onClick={handleDeleteClick}>X</button>
-      <p>{todoObject.name}</p>
-      <button onClick={handleDoneClick}>DONE</button>
+      <button className="Todo__deleteBtn" onClick={handleDeleteClick}>
+        X
+      </button>
+      <p className="Todo__text">{todoObject.name}</p>
+      <button
+        className={`Todo__doneBtn ${todoBtnClassToggle}`}
+        onClick={handleDoneClick}
+      >
+        DONE
+      </button>
     </li>
   );
 }
