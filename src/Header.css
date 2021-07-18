@@ -1,3 +1,27 @@
 .Header {
   background-color: salmon;
 }
+
+.Header__addBtn {
+  border: 1px solid #4cb5f5;
+  border-radius: 5px;
+  color: white;
+  background-color: #b7b8b6;
+  font-weight: 800;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.Header__addBtn:active {
+  border: 1px solid #34675c;
+}
+
+.Header__input {
+  border: 1px solid #4cb5f5;
+  border-radius: 5px;
+  outline: none;
+}
+
+.Header__input:focus {
+  border: 1px solid #34675c;
+}

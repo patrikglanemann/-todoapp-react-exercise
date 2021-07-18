@@ -5,8 +5,13 @@ export default function Header({ onAddButtonClick }) {
     <header className="Header">
       <h1>Todo:</h1>
       <form onSubmit={onAddButtonClick}>
-        <input type="text" name="todoInput" id="todoInput"></input>
-        <button>Add</button>
+        <input
+          className="Header__input"
+          type="text"
+          name="todoInput"
+          id="todoInput"
+        ></input>
+        <button className="Header__addBtn">Add</button>
       </form>
     </header>
   );
