@@ -6,7 +6,7 @@ export default function TodoList({
   onTodoDoneClick,
   onTodoDeleteClick,
 }) {
-  function addTodo() {
+  function renderTodos() {
     const newTodoList = todos.map((todo) => {
       return (
         <Todo
@@ -21,7 +21,7 @@ export default function TodoList({
   }
   return (
     <main className="Content">
-      <ul className="TodoList">{addTodo()}</ul>
+      <ul className="TodoList">{renderTodos()}</ul>
     </main>
   );
 }

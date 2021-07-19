@@ -48,10 +48,3 @@ function App() {
 }
 
 export default App;
-
-/*
-#4cb5f5 blue
-#b7b8b6 grey
-#34675C dark green
-#B3C100 green
-*/
